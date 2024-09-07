@@ -17,3 +17,7 @@ class Product(BaseModel):
 @app.get("/ok")
 async def ok_endpoint():
     return {"message": "ok"}
+  
+@app.get("/hello")
+async def hello_endpoint(name: str = 'World'):
+    return {"message": f"Hello, {name}!"}
