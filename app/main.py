@@ -10,3 +10,10 @@ class Order(BaseModel):
     product: str
     units: int
     
+class Product(BaseModel):
+    name: str
+    notes: str
+
+@app.get("/ok")
+async def ok_endpoint():
+    return {"message": "ok"}
