@@ -8,3 +8,6 @@ params = {
     'product': 'laptop',
     'units': '1'
 }
+response = requests.post(url, headers=headers, data=json.dumps(params))
+
+print(response.json())
