@@ -21,3 +21,7 @@ async def ok_endpoint():
 @app.get("/hello")
 async def hello_endpoint(name: str = 'World'):
     return {"message": f"Hello, {name}!"}
+
+@app.post("/orders")
+async def place_order(product: str, units: int):
+    return {"message": f"Order for {units} units of {product} placed successfully."}
