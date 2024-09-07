@@ -25,3 +25,7 @@ async def hello_endpoint(name: str = 'World'):
 @app.post("/orders")
 async def place_order(product: str, units: int):
     return {"message": f"Order for {units} units of {product} placed successfully."}
+
+@app.post("/orders_pydantic")
+async def place_order(order: Order):
+    return {"message": f"Order for {order.units} units of {order.product} placed successfully."}
